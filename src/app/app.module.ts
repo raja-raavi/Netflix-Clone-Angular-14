@@ -17,8 +17,8 @@ import { MovieDetailsApiService } from './services/movie-details-api.service';
     HomeComponent,
     SearchComponent,
     MovieDetailsComponent,
-    PageNotFoundComponent
-  ],
+    PageNotFoundComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
