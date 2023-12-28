@@ -1,1 +1,11 @@
-<p>movie-details works!</p>
+<div class="contain mt-5">
+    <div class="row p-5">
+        <div class="col-lg-2">
+            <img src="https://image.tmdb.org/t/p/original/{{movieDetailsResult.backdrop_path }}" />
+        </div>
+        <div class="col-lg-10 p-3">
+            <h1 class="mt-2 mb-2">{{movieDetailsResult.original_title}}</h1>
+            <p class="mt-3 mb-3">{{movieDetailsResult.overview}}</p>
+        </div>
+    </div>
+</div>

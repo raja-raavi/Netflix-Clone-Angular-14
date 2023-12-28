@@ -16,16 +16,21 @@ export class MovieDetailsApiService {
 
   //banner Api Data
   bannerApiData() : Observable<any> {
-    return this.http.get(`${this.baseurl}/trending/all/week?api_key=${this.apikey}`)
+    return this.http.get(`${this.baseurl}/trending/all/week?api_key=${this.apikey}`);
   }
 
   //Trendings movies Data
   trendingMoviesApiData() : Observable<any>{
-    return this.http.get(`${this.baseurl}/trending/movie/day?api_key=${this.apikey}`)
+    return this.http.get(`${this.baseurl}/trending/movie/day?api_key=${this.apikey}`);
   }
 
   //seaarch movie Api
   searchMovie(data:any) : Observable<any> {
-    return this.http.get(`${this.baseurl}/search/movie?api_key=${this.apikey}&query=${data.movieName}`)
+    return this.http.get(`${this.baseurl}/search/movie?api_key=${this.apikey}&query=${data.movieName}`);
+  }
+
+  //movie details api
+  getMovieDetails(id:any) : Observable<any>{
+    return this.http.get(`${this.baseurl}/movie/${id}?api_key=${this.apikey}`);
   }
 }
