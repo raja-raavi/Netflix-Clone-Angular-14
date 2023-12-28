@@ -1,1 +1,30 @@
-<p>search works!</p>
+<div class="contain mt-5 p-5">
+    <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
+        <div class="row">
+            <div class="mb-3 col-lg-7">
+                <input type="text" class="form-control" placeholder="Enter Movie Name Here...."
+                    formControlName="movieName">
+                <p class="text-danger"
+                    *ngIf="searchForm.controls['movieName']?.touched && searchForm.controls['movieName'].errors?.['required']">
+                    movie name is required</p>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn btn-md" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="row mt-5">
+        <div class="col-lg-4" *ngFor="let ele of searchresult">
+            <div class="row">
+                <div class="col-lg-3 mt-4 mb-4" *ngIf="ele.poster_path">
+                    <img src="https://image.tmdb.org/t/p/original/{{ ele.poster_path }}" alt="">
+                </div>
+                <div class="col-lg-9 mt-4 mb-4">
+                    <h5>{{ele.original_title}}</h5>
+                    <p>{{ele.overview}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

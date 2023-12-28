@@ -1,0 +1,29 @@
+button {
+    background-color: #e50914;
+    color: white;
+}
+
+button:hover {
+    background-color: #e50914;
+    color: white;
+}
+
+input.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+ 
+input.ng-touched.ng-valid{
+    border: 2px solid green;
+}
+
+p {
+    color: white;
+}
+
+img {
+    width: 100%;
+}
+
+h5{
+    color: red;
+}
