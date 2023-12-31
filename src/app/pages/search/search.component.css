@@ -27,3 +27,7 @@ img {
 h5{
     color: red;
 }
+
+h5, img:hover {
+    cursor: pointer;
+}
