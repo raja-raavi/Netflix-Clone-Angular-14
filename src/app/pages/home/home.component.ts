@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit{
   trendingMovies() {
     this.service.trendingMoviesApiData().subscribe(data=>{
       this.trendingMoviesResult = data.results 
-      console.log(data);
+      // console.log(data);
       
     },error => {
       alert("Something Went Wrong!!");

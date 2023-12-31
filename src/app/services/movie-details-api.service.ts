@@ -30,7 +30,17 @@ export class MovieDetailsApiService {
   }
 
   //movie details api
-  getMovieDetails(id:any) : Observable<any>{
+  getMovieDetails(id:number) : Observable<any>{
     return this.http.get(`${this.baseurl}/movie/${id}?api_key=${this.apikey}`);
+  }
+
+  //movie video api
+  getMovieVideo(id:number): Observable<any> {
+    return this.http.get(`${this.baseurl}/movie/${id}/videos?api_key=${this.apikey}`);
+  }
+
+  //movie cast api
+  getMovieCast(id:number): Observable<any>{
+    return this.http.get(`${this.baseurl}/movie/${id}/credits?api_key=${this.apikey}`);
   }
 }
