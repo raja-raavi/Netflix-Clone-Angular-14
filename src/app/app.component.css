@@ -1,11 +1,23 @@
-.navbar .navbar-brand {
-    color: #e50914;
-    font-weight: bold;
-}
+
 .navbar-nav .nav-item .nav-link{
     color: #e50914;
     font-weight: bold;
 }
 
-/* snow */
+.logo {
+	position: relative;
+	z-index: 2;
+	height: 10px;
+}
+
+.logo img {
+	width: 100px;
+	position: absolute;
+	top: -5px;
+	left: 40px;
+}
+
+.logo img:hover {
+    cursor: pointer;
+}
 
