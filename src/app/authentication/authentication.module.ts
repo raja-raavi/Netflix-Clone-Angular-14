@@ -6,6 +6,7 @@ import { AuthenticationComponent } from './authentication.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { StartupPageComponent } from './startup-page/startup-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { StartupPageComponent } from './startup-page/startup-page.component';
   ],
   imports: [
     CommonModule,
-    AuthenticationRoutingModule
+    AuthenticationRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthenticationModule { }

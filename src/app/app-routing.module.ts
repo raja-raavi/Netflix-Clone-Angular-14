@@ -7,7 +7,9 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { StartupPageComponent } from './authentication/startup-page/startup-page.component';
 
 const routes: Routes = [
-  {path:'', component: StartupPageComponent},
+
+  // {path: ' ', redirectTo: 'auth/startup', pathMatch: 'full'},
+  {path: 'auth/startup', component: StartupPageComponent},
   {path:'home', component: HomeComponent},
   {path:'search', component: SearchComponent},
   {path:'movie/:id', component: MovieDetailsComponent},

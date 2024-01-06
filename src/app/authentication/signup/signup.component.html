@@ -1,1 +1,97 @@
-<p>signup works!</p>
+<header class="showcase">
+    <div class="logo">
+        <img src="https://i.ibb.co/r5krrdz/logo.png">
+    </div>
+
+    <div class="showcase-content">
+        <div class="formm">
+            <form #signupForm="ngForm">
+                <h1>Sign up</h1>
+                <div class="info">
+                    <!-- first name field -->
+                    <input class="email" type="text" name="firstName" placeholder="Enter First name here" ngModel
+                        required /><br>
+                    <div *ngIf="signupForm.controls['firstName']?.touched && signupForm.controls['firstName']?.errors"
+                        class="text-danger">
+                        <div *ngIf="signupForm.controls['firstName']?.errors?.['required']">
+                            First Name is Required
+                        </div>
+                    </div>
+
+                    <!-- email field -->
+                    <input class="email" type="email" name="email" placeholder="Enter email here" ngModel required
+                        email /> <br>
+                    <div *ngIf="signupForm.controls['email']?.touched && signupForm.controls['email']?.errors"
+                        class="text-danger">
+                        <div *ngIf="signupForm.controls['email']?.errors?.['required']">
+                            email is Required
+                        </div>
+                        <div *ngIf="signupForm.controls['email']?.errors?.['email']">
+                            Invalid email Format
+                        </div>
+                    </div>
+
+                    <!-- password field -->
+                    <input class="email" type="password" name="password" placeholder="Enter password here" ngModel
+                        required minlength="8">
+                    <div *ngIf="signupForm.controls['password']?.touched && signupForm.controls['password']?.errors"
+                        class="text-danger">
+                        <div *ngIf="signupForm.controls['password']?.errors?.['required']">
+                            Password is Required
+                        </div>
+                        <div *ngIf="signupForm.controls['password']?.errors?.['minlength']">
+                            Minimun 8 Characters Required
+                        </div>
+                    </div>
+                </div>
+
+                <!-- signup  button -->
+
+                <div class="btn">
+                    <button class="btn-primary" type="submit" (click)="signup(signupForm)"
+                        [disabled]="signupForm.invalid"> Sign up </button>
+                </div>
+                <div class=" help">
+                    <div>
+                        <input value="true" type="checkbox"><label>Remember me</label>
+                    </div>
+                    <a href="https://www.netflix.com/dz-en/LoginHelp">Need Help ?</a>
+                </div>
+            </form>
+        </div>
+        <div class="fcbk">
+            <a href="https://facebook.com">
+                <img src="https://i.ibb.co/LrVMXNR/social-fb.png" alt="Facebook">
+            </a>
+            <p>Login with Facebook</p>
+        </div>
+        <div class="signup">
+            <p>Already have an account ?</p>
+            <a href="https://www.netflix.com/dz-en/" [routerLink]="['/auth/login']">Sign in now</a>
+        </div>
+        <div class="more">
+            <p>This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more.</a></p>
+        </div>
+    </div>
+
+    <!-- footer start -->
+    <footer>
+        <div class="ftr-content">
+            <div class="contact">
+                <a href="#">Quesions? Contact us.</a>
+            </div>
+            <div class="ftr">
+                <a href="#">Gift Card Terms</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Statement</a>
+            </div>
+            <div class="select">
+                <select>
+                    <option>English</option>
+                    <option>العربية</option>
+                    <option>Français</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+</header>

@@ -9,7 +9,7 @@ import { MovieDetailsComponent } from './pages/movie-details/movie-details.compo
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { MovieDetailsApiService } from './services/movie-details-api.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [MovieDetailsApiService],
   
