@@ -24,13 +24,20 @@ img {
     width: 100%;
 }
 
-h5{
-    color: red;
-}
+
 
 h5, img:hover {
     cursor: pointer;
+    color: red;
 }
+
+/* search not found */
+
+#notFound {
+    margin-left: 30%;
+    color: white;
+}
+
 
 
 /* customizable snowflake styling */
