@@ -15,7 +15,7 @@ export class SearchComponent {
 
   searchresult:any
   searchForm = new FormGroup({
-    "movieName": new FormControl(null, Validators.required)
+    "movieName": new FormControl('', Validators.required)
     
   });
 
@@ -23,6 +23,9 @@ export class SearchComponent {
     console.log(this.searchForm.controls.movieName); 
     this.service.searchMovie(this.searchForm.value).subscribe(data=>{
       this.searchresult = data.results;
+      if(this.searchresult == ""){
+        alert("nothig")
+      }
     })
     
   }

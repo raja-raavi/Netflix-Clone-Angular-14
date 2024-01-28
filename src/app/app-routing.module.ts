@@ -8,7 +8,7 @@ import { StartupPageComponent } from './authentication/startup-page/startup-page
 
 const routes: Routes = [
 
-  // {path: ' ', redirectTo: 'auth/startup', pathMatch: 'full'},
+  {path: '', redirectTo: 'auth/startup', pathMatch: 'full'},
   {path: 'auth/startup', component: StartupPageComponent},
   {path:'home', component: HomeComponent},
   {path:'search', component: SearchComponent},
