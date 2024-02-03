@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { StartupPageComponent } from './startup-page/startup-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MovieDetailsApiService } from '../services/movie-details-api.service';
+import { AuthService } from '../services/auth.service';
+import { AuthenticationGuard } from '../guards/authentication.guard';
 
 
 @NgModule({
@@ -21,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AuthenticationRoutingModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: [MovieDetailsApiService,AuthService,AuthenticationGuard],
 })
 export class AuthenticationModule { }

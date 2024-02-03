@@ -3,6 +3,18 @@ img{
     height: auto;
 }
 
+button {
+    background-color: #e50914;
+    color: white;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #e50914;
+    color: white;
+    border: 2px solid white;
+}
+
 h1{
     color: #e50914;
     font-weight: bold;

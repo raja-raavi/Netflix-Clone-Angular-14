@@ -38,6 +38,8 @@ export class HomeComponent implements OnInit{
   bannerData(){
     this.service.bannerApiData().subscribe(data=>{
       this.bannerResult = data.results;
+      console.log(this.bannerResult);
+      
     },error => {
       alert("Something Went Wrong!!");
     })

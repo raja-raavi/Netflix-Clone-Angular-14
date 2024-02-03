@@ -10,6 +10,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { HttpClientModule } from  '@angular/common/http';
 import { MovieDetailsApiService } from './services/movie-details-api.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthenticationGuard } from './guards/authentication.guard';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [MovieDetailsApiService],
+  providers: [MovieDetailsApiService,AuthService,AuthenticationGuard],
   
   bootstrap: [AppComponent]
 })

@@ -18,7 +18,6 @@ export class SearchComponent {
 
   searchForm = new FormGroup({
     "movieName": new FormControl('', Validators.required)
-    
   });
 
   submitForm(){

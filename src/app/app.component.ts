@@ -1,5 +1,6 @@
-import { Component, Host, HostListener } from '@angular/core';
+import { Component, Host, HostListener, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,8 @@ export class AppComponent {
   navbarBackground: any;
   showNavbar:boolean = true;
 
-  constructor(private router: Router){
-   
+  constructor(private router: Router, public service:AuthService){
+    
   } 
 
   ngOnInit(){
@@ -38,6 +39,17 @@ export class AppComponent {
       }
     }else{
       this.navbarBackground = { }
+    }
+  }
+
+  logout(){
+   var result =  window.confirm('Are you sure want to logout?')
+    console.log(result);
+    if(result == true){
+      this.router.navigate(['auth/login']);
+      return localStorage.clear();
+    }else {
+      this.router.navigate(['/home']);
     }
   }
 }

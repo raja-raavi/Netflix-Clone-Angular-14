@@ -5,13 +5,14 @@ import { SearchComponent } from './pages/search/search.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { StartupPageComponent } from './authentication/startup-page/startup-page.component';
+import { AuthenticationGuard } from './guards/authentication.guard';
 
 const routes: Routes = [
 
   {path: '', redirectTo: 'auth/startup', pathMatch: 'full'},
   {path: 'auth/startup', component: StartupPageComponent},
-  {path:'home', component: HomeComponent},
-  {path:'search', component: SearchComponent},
+  {path:'home', component: HomeComponent, canActivate: [AuthenticationGuard]},
+  {path:'search', component: SearchComponent, canActivate: [AuthenticationGuard]},
   {path:'movie/:id', component: MovieDetailsComponent},
   { path: 'auth', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
   {path:'**', component: PageNotFoundComponent}
