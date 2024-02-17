@@ -13,8 +13,6 @@ export class StartupPageComponent {
     }
 
     signInClicked(){
-      console.log("clicked");
-      
-      this.router.navigate(['/auth/login']);
+       this.router.navigate(['/auth/login']);
     }
 }
