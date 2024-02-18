@@ -4,26 +4,31 @@ import { register } from '../authentication/register';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { 
-
+  registeredUsers(userData: register): Observable<register> {
+    return this.http.post<register>(
+      'https://json-nize.onrender.com/RegisteredUsersList',
+      userData
+    );
   }
 
-  registeredUsers(userData:register) : Observable<register>{
-    return this.http.post<register>('http://localhost:3000/RegisteredUsersList', userData);  
+  getAllRegisteredUsers(): Observable<register[]> {
+    return this.http.get<register[]>(
+      'https://json-nize.onrender.com/RegisteredUsersList'
+    );
   }
 
-  getAllRegisteredUsers() : Observable<register[]>{
-    return this.http.get<register[]>("http://localhost:3000/RegisteredUsersList");
-  }
-
-  isUserLoggedIn(){
-    if(localStorage.getItem('email') == null && localStorage.getItem('password') == null){
+  isUserLoggedIn() {
+    if (
+      localStorage.getItem('email') == null &&
+      localStorage.getItem('password') == null
+    ) {
       return false;
-    }else{
+    } else {
       return true;
     }
   }
