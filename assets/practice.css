@@ -1,0 +1,20 @@
+/* it will apply to aonly parent class */
+/* flex direction row -> main axis: x-axis, crossaxis: y-axis */
+/* flex direction col -> main axis: y-axis, crossaxis: x-axis */
+
+/* justify-content: align flex childrens along main axis
+align-content: center -> align flex childrens in cross axis with center of the screen */
+
+p {
+    /* moves everthing into row wise */
+    /* display: flex; */
+    /* by default it is row direction. we can make it column */
+    /* flex-direction: column; */
+    /* content will begin from end */
+    /* flex-direction: column-reverse;
+    flex-direction: row-reverse; */
+    /* it will arrange in next col/row whenever it is not fitted */
+    /* flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; */
+}
